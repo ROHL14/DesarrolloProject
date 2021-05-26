@@ -5,7 +5,7 @@ session_start();
 $dbhost = 'localhost';		// Write your MySQL host here.
 $dbuser = 'root';	// Write your MySQL User here.
 $dbpass = '';	// Write your MySQL Password here.
-$dbname = 'sistemadesarrollo';		// Write the MySQL Database where you want to install Invento
+$dbname = 'sistemadesarrollo';		// Write the MySQL Database where you want to Sistema Inventario
 
 
 /************ DON'T EDIT NOTHING BELOW ************/
