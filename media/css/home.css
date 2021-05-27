@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: Open Sans;
-  color: #333;
+  color: #000000;
   outline: none;
 }
 
@@ -30,14 +30,14 @@ html {
 .border {
   width: 100%;
   height: 15px;
-  background-color: #f6f5f5;
+  background-color: #ebf5f7;
 }
 h2 {
   display: inline-block;
   width: 100%;
   text-align: left;
-  border-bottom: 1px solid #d8eef3;
-  color: #527f8a;
+  border-bottom: 1px solid #040404;
+  color: #000000;
   font-weight: 500;
   margin: 15px 0 5px 0;
 }
@@ -112,7 +112,7 @@ span.downtitle {
 #header .right a:visited {
   font-weight: 300;
   font-size: 17px;
-  color: #aaa;
+  color: #000000;
   text-decoration: none;
   letter-spacing: -0.8px;
 }
@@ -150,7 +150,7 @@ span.downtitle {
   font-size: 15px;
   letter-spacing: -0.8px;
   text-decoration: none;
-  color: #333;
+  color: #040404;
   margin: 0;
 }
 #menu ul#menuli li a:hover {
@@ -174,7 +174,7 @@ ul#selectors {
   text-align: left;
   list-style: none;
   margin-bottom: 5px;
-  background-color: #f8f8f8;
+  background-color: #ebf5f7;
   margin-top: -5px;
   padding: 5px 0 5px 5px;
 }
@@ -182,7 +182,7 @@ ul#selectors li {
   display: inline-block;
   margin-right: 30px;
   font-size: 13px;
-  color: #b1b1b1;
+  color: #f30909;
 }
 ul#selectors li.selected {
   color: #5c5c5c;
@@ -202,7 +202,7 @@ ul#selectors li:hover {
 #f2details .element {
   float: left;
   text-align: left;
-  color: #bbb;
+  color: #000000;
   font-size: 13px;
 }
 #fdetails .element span,

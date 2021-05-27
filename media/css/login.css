@@ -35,10 +35,10 @@ html {
   padding: 20px 0;
   width: 280px;
   height: 290px;
-  background-color: #fff;
-  border: 1px solid #eee;
+  background-color:#F2F2F2;
+  border: 1px solid #000000;
   border-radius: 20px;
-  box-shadow: 3px 3px 3px 3px #eee;
+  box-shadow: 3px 3px 3px 3px #000000;
 }
 
 #content #logo {
@@ -50,14 +50,14 @@ html {
   padding: 5px 25px;
   font-size: 13px;
   text-align: left;
-  color: #999;
+  /*color: #4E4E4E*/ ;
   font-weight: 600;
 }
 
 #content #login #error {
-  background-color: #ffaaac;
+  background-color: #ff0000;
   font-weight: 600;
-  color: #fff;
+  color: #000000;
   text-shadow: 0 1px 0 #ff0000;
   padding: 3px 0;
   text-align: center;
@@ -75,15 +75,15 @@ html {
   padding: 5px 10px;
   width: 210px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   font-size: 13px;
-  color: #bbb;
+  color: #2F4F4F ;
 }
 #content #login input[type="text"]:hover,
 #content #login input[type="password"]:hover,
 #content #login input[type="text"]:focus,
 #content #login input[type="password"]:focus {
-  border-color: #b5b5b5;
+  border-color: #000000;
   color: #a0a0a0;
 }
 #content #login input[type="text"]:focus,
@@ -96,9 +96,9 @@ html {
   padding: 5px 25px;
   margin: 5px -2px 0 10px;
   font-weight: 600;
-  color: #fff;
-  background-color: #8ccbff;
-  text-shadow: 0 1px 0 #0087ff;
+  color: #000000;
+  background-color: #60BBE6 ;
+  text-shadow: 0 1px 0 #60BBE6 ;
   border: none;
   float: right;
 }

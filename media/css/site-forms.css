@@ -16,8 +16,8 @@
   padding: 3px 5px;
   width: 100%;
   letter-spacing: -0.7px;
-  color: #bbb;
-  border: 1px solid #ddd;
+  color: #000000;
+  border: 1px solid #000000;
   margin-bottom: 20px;
   display: block;
   margin-top: 2px;
@@ -26,8 +26,8 @@
 #main-wrapper .form input[type="text"].ni-small {
   padding: 3px 10px;
   width: 50px;
-  color: #bbb;
-  border: 1px solid #ddd;
+  color: #000000;
+  border: 1px solid #000000;
   margin-bottom: 20px;
   display: block;
   letter-spacing: -0.7px;
@@ -38,8 +38,8 @@
 #main-wrapper .form input[type="text"].ni:hover,
 #main-wrapper .form input[type="text"].ni-small:hover,
 #main-wrapper .form textarea.ni:hover {
-  color: #aaa;
-  border-color: #ccc;
+  color: #000000;
+  border-color: #000000;
 }
 #main-wrapper .form input[type="password"].ni:focus,
 #main-wrapper .form input[type="password"].ni-small:focus,
@@ -66,8 +66,8 @@
   width: 100%;
   height: 28px;
   font-size: 12px;
-  border-color: #ddd;
-  color: #bbb;
+  border-color: #000000;
+  color: #000000;
   -webkit-appearance: none;
   -moz-appareance: none;
   appareance: none;
@@ -76,8 +76,8 @@
   left: 0;
 }
 #main-wrapper .form select:hover {
-  border-color: #ccc;
-  color: #aaa;
+  border-color: #000000;
+  color: #000000;
 }
 #main-wrapper input[type="submit"].ni {
   float: right;
