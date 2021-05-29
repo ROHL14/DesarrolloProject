@@ -3,7 +3,7 @@
 class Session
 {
 	private $self_file = 'session.php';
-	private $mysqli = false;
+	private $mysqli;
 
 	public function __construct($m)
 	{
@@ -137,11 +137,11 @@ class Session
 			die("Couldn't run query. inc/{$this->self_file} - $func");
 		return $q;
 	}
-	public function __destruct()
+	/*public function __destruct()
 	{
 		if (is_resource($this->mysqli) && get_resource_type($this->mysqli) == 'mysql link')
 			$this->mysqli->close();
-	}
+	}*/
 }
 
 $_session = new Session($mysqli);

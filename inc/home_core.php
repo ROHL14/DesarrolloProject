@@ -3,8 +3,8 @@
 class Home
 {
 	private $self_file = 'home_core.php';
-	private $mysqli = false;
-	private $session = false;
+	private $mysqli;
+	private $session;
 
 	public function __construct($m)
 	{
@@ -187,11 +187,11 @@ class Home
 			die("Couldn't run query. inc/{$this->self_file} - $func");
 		return $q;
 	}
-	public function __destruct()
+	/*public function __destruct()
 	{
 		if (is_resource($this->mysqli) && get_resource_type($this->mysqli) == 'mysql link')
 			$this->mysqli->close();
-	}
+	}*/
 }
 
 $_home = new Home($mysqli);

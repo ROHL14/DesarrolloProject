@@ -3,8 +3,8 @@
 class Logs
 {
 	private $self_file = 'logs_core.php';
-	private $mysqli = false;
-	private $session = false;
+	private $mysqli;
+	private $session;
 
 	public function __construct($m)
 	{
@@ -54,13 +54,13 @@ class Logs
 
 		if ($itemid != false) {
 			$prepared = $this->prepare("SELECT * FROM invento_logs WHERE item=? AND (id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ?) ORDER BY id DESC LIMIT ?,?", 'search()');
-			$this->bind_param($prepare->bind_param('issssii', $itemid, $s, $s, $s, $s, $x, $y), 'search()');
+			$this->bind_param($prepared->bind_param('issssii', $itemid, $s, $s, $s, $s, $x, $y), 'search()');
 		} elseif ($catid != false) {
 			$prepared = $this->prepare("SELECT * FROM invento_logs WHERE item IN (SELECT id FROM invento_items WHERE category=?) AND (id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ?) ORDER BY id DESC LIMIT ?,?", 'search()');
-			$this->bind_param($prepare->bind_param('issssii', $catid, $s, $s, $s, $s, $x, $y), 'search()');
+			$this->bind_param($prepared->bind_param('issssii', $catid, $s, $s, $s, $s, $x, $y), 'search()');
 		} elseif ($userid != false) {
 			$prepared = $this->prepare("SELECT * FROM invento_logs WHERE `user`=? AND (id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ?) ORDER BY id DESC LIMIT ?,?", 'search()');
-			$this->bind_param($prepare->bind_param('issssii', $userid, $s, $s, $s, $s, $x, $y), 'search()');
+			$this->bind_param($prepared->bind_param('issssii', $userid, $s, $s, $s, $s, $x, $y), 'search()');
 		} else {
 			$prepared = $this->prepare("SELECT * FROM invento_logs WHERE id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ? ORDER BY id DESC LIMIT ?,?", 'search()');
 			$this->bind_param($prepared->bind_param('ssssii', $s, $s, $s, $s, $x, $y), 'search()');
@@ -102,13 +102,13 @@ class Logs
 		$s = "%$string%";
 		if ($itemid != false) {
 			$prepared = $this->prepare("SELECT COUNT(*) as c FROM invento_logs WHERE item=? AND (id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ?)", 'count_logs_search()');
-			$this->bind_param($prepare->bind_param('issss', $itemid, $s, $s, $s, $s), 'count_logs_search()');
+			$this->bind_param($prepared->bind_param('issss', $itemid, $s, $s, $s, $s), 'count_logs_search()');
 		} elseif ($catid != false) {
 			$prepared = $this->prepare("SELECT COUNT(*) as c FROM invento_logs WHERE item IN (SELECT id FROM invento_items WHERE category=?) AND (id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ?)", 'count_logs_search()');
-			$this->bind_param($prepare->bind_param('issss', $catid, $s, $s, $s, $s), 'count_logs_search()');
+			$this->bind_param($prepared->bind_param('issss', $catid, $s, $s, $s, $s), 'count_logs_search()');
 		} elseif ($userid != false) {
 			$prepared = $this->prepare("SELECT COUNT(*) as c FROM invento_logs WHERE `user`=? AND (id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ?)", 'count_logs_search()');
-			$this->bind_param($prepare->bind_param('issss', $userid, $s, $s, $s, $s), 'count_logs_search()');
+			$this->bind_param($prepared->bind_param('issss', $userid, $s, $s, $s, $s), 'count_logs_search()');
 		} else {
 			$prepared = $this->prepare("SELECT COUNT(*) as c FROM invento_logs WHERE id LIKE ? OR item IN (SELECT id FROM invento_items WHERE name LIKE ?) OR `user` IN (SELECT id FROM invento_users WHERE username LIKE ?) OR date_added LIKE ?", 'count_logs_search()');
 			$this->bind_param($prepared->bind_param('ssss', $s, $s, $s, $s), 'count_logs_search()');
@@ -156,11 +156,11 @@ class Logs
 			die("Couldn't run query. inc/{$this->self_file} - $func");
 		return $q;
 	}
-	public function __destruct()
+	/*public function __destruct()
 	{
 		if (is_resource($this->mysqli) && get_resource_type($this->mysqli) == 'mysql link')
 			$this->mysqli->close();
-	}
+	}*/
 }
 
 $_logs = new Logs($mysqli);

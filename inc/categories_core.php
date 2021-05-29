@@ -3,8 +3,8 @@
 class Categories
 {
 	private $self_file = 'categories_core.php';
-	private $mysqli = false;
-	private $session = false;
+	private $mysqli;
+	private $session;
 
 	public function __construct($m)
 	{
@@ -135,11 +135,11 @@ class Categories
 			die("Couldn't run query. inc/{$this->self_file} - $func");
 		return $q;
 	}
-	public function __destruct()
+	/*public function __destruct()
 	{
 		if (is_resource($this->mysqli) && get_resource_type($this->mysqli) == 'mysql link')
 			$this->mysqli->close();
-	}
+	}*/
 }
 
 $_cats = new Categories($mysqli);
