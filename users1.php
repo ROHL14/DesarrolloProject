@@ -13,7 +13,7 @@ if ($role == 4)
 	header('Location: home.php');
 
 if (isset($_POST['act'])) {
-	// Search count
+	// Busca el conteo
 	if ($_POST['act'] == '1') {
 		if (!isset($_POST['val']) || $_POST['val'] == '')
 			die('wrong');
@@ -23,27 +23,27 @@ if (isset($_POST['act'])) {
 		die('3');
 	}
 
-	// Delete user
+	// Borra el usuario
 	if ($_POST['act'] == '2') {
 		if ($_POST['id'] == '')
 			die('wrong');
 
-		// Check if actual user is the same id to prevent removal
+		// Verifica si el usuario que se borrara es el usuario actual para preveenir borrarlo
 		if ($_session->get_user_id() == $_POST['id'])
 			die('2');
 
-		// Is the user an admin or general supervisor? Only admins can delete them
+		// Verifica si el usuario que se borrara el administrador o supervisor general, solo administradores pueden borrarlos
 		$role = $_users->get_user($_POST['id']);
 		$role = $role->role;
 		if ($role == 1 || $role == 2) {
-			// Is the logged user an admin as well? Proceed
+			// Verifica si el usuario es admin, proceder
 			if ($_session->get_user_role() == 1) {
 				if ($_users->delete_user($_POST['id']) == true)
 					die('1');
 			}
 			die('wrong');
 		} elseif ($role == 1 || $role == 2 || $role == 3 || $role == 4) {
-			// Is the user a supervisor or employee? Admins and general supervisors can delete them
+			// Verifica si el usaurio es supervisor o empleado, solo administradores y supervisores general pueden borrarlos
 			if ($_session->get_user_role() == 1 || $_session->get_user_role() == 2) {
 				if ($_users->delete_user($_POST['id']) == true)
 					die('1');

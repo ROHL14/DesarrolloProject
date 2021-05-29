@@ -25,7 +25,7 @@ if (isset($_POST['act'])) {
 		$qty = $_POST['qty'];
 		$price = $_POST['price'];
 
-		// Fix price
+		// Arregla el precio del producto
 		$price = (string)$price;
 		if (strpos($price, '.') === false) {
 			$price = $price . '.00';

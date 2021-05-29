@@ -1,14 +1,11 @@
 <?php
 session_start();
 
-/************	You can edit details starting from here ************/
-$dbhost = 'localhost';		// Write your MySQL host here.
-$dbuser = 'root';	// Escribe tu nombre de usuario MySQL
-$dbpass = '';	// Write your MySQL Password here.
-$dbname = 'sistemadesarrollo';		// Escribe el nombre de la base de datos
 
-
-/************ DON'T EDIT NOTHING BELOW ************/
+$dbhost = 'localhost';		// Nombre del host
+$dbuser = 'root';	// Nombre de usuario en la base de datos
+$dbpass = '';	// Contrasena en la base de datos
+$dbname = 'sistemadesarrollo';		// Nombre de la base de datos
 
 if (!isset($noredir) && $dbhost == 'localhost' && $dbuser == 'MYSQL USERNAME' && $dbpass == 'MYSQL PASSWORD')
 	header('Location:install.php');
@@ -18,6 +15,7 @@ if (!isset($noredir)) {
 		die('<h2>Something went wrong while trying to connect to your MySQL Database. Error No. ' . $mysql->connect_errno . '<h2>');
 
 	// Check existance of random table to test installed system
+	// Verifica la existencia de una tabla para probar si el sistema esta instalado
 	$tables = array('users', 'categories', 'items', 'logs', 'settings');
 	$rn = rand(0, 4);
 	$res = $mysqli->query("SHOW TABLES LIKE '%invento_{$tables[$rn]}%'");

@@ -30,35 +30,75 @@ elseif ($headrole == 4)
 <div id="menu">
 	<ul id="menuli">
 		<?php
-		// Home only for Admin and General Supervisor (Stats)
+		// Home solo para administradores y supervisor general
 		if ($headrole == 1 || $headrole == 2) {
 		?>
-			<li<?php if ($_page == 1) { ?> class="active" <?php } ?>><a href="home.php" title="Home"><i class="fa fa-home"></i> Inicio</a></li>
-			<?php
+			<li <?php if ($_page == 1) { ?> class="active" <?php } ?>>
+				<a href="home.php" title="Home">
+					<i class="fa fa-home"></i>
+					Inicio
+				</a>
+			</li>
+		<?php
 		}
-			?>
+		?>
 
-			<?php
-			// Add Item only for Admin, General Supervisor and Supervisor
-			if ($headrole == 1 || $headrole == 2 || $headrole == 3) {
-			?>
-				<li<?php if ($_page == 2) { ?> class="active" <?php } ?>><a href="new-item.php" title="New Item"><i class="fa fa-plus"></i> Nuevo producto</a></li>
-				<?php
-			}
-				?>
+		<?php
+		// Agregar producto solo para administradores, supervisor general y supervisor
+		if ($headrole == 1 || $headrole == 2 || $headrole == 3) {
+		?>
+			<li <?php if ($_page == 2) { ?> class="active" <?php } ?>>
+				<a href="new-item.php" title="New Item">
+					<i class="fa fa-plus">
+					</i>
+					Nuevo producto
+				</a>
+			</li>
+		<?php
+		}
+		?>
 
-				<li<?php if ($_page == 3) { ?> class="active" <?php } ?>><a href="items.php" title="Items"><i class="fa fa-list-ul"></i> Productos</a></li>
-					<li<?php if ($_page == 4) { ?> class="active" <?php } ?>><a href="check-in.php" title="Check-In Item"><i class="fa fa-arrow-down"></i> Ingresos</a></li>
-						<li<?php if ($_page == 5) { ?> class="active" <?php } ?>><a href="check-out.php" title="Check-Out Item"><i class="fa fa-arrow-up"></i> Salidas</a></li>
+		<li <?php if ($_page == 3) { ?> class="active" <?php } ?>>
+			<a href="items.php" title="Items">
+				<i class="fa fa-list-ul">
+				</i>
+				Productos
+			</a>
+		</li>
+		<li <?php if ($_page == 4) { ?> class="active" <?php } ?>>
+			<a href="check-in.php" title="Check-In Item">
+				<i class="fa fa-arrow-down">
+				</i>
+				Ingresos
+			</a>
+		</li>
+		<li <?php if ($_page == 5) { ?> class="active" <?php } ?>>
+			<a href="check-out.php" title="Check-Out Item">
+				<i class="fa fa-arrow-up">
+				</i>
+				Salidas
+			</a>
+		</li>
 
-							<?php
-							// Add Item only for Admin, General Supervisor and Supervisor
-							if ($headrole == 1 || $headrole == 2 || $headrole == 3) {
-							?>
-								<li<?php if ($_page == 6) { ?> class="active" <?php } ?>><a href="logs.php" title="Logs"><i class="fa fa-file-text-o"></i> Logs</a></li>
-								<?php
-							}
-								?>
-								<li<?php if ($_page == 7) { ?> class="active" <?php } ?>><a href="categories.php" title="Categories"><i class="fa fa-folder"></i> Categorías</a></li>
+		<?php
+		// Agregar producto solo para administradores, supervisor general y supervisor
+		if ($headrole == 1 || $headrole == 2 || $headrole == 3) {
+		?>
+			<li <?php if ($_page == 6) { ?> class="active" <?php } ?>>
+				<a href="logs.php" title="Logs">
+					<i class="fa fa-file-text-o">
+					</i>
+					Logs</a>
+			</li>
+		<?php
+		}
+		?>
+		<li <?php if ($_page == 7) { ?> class="active" <?php } ?>>
+			<a href="categories.php" title="Categories">
+				<i class="fa fa-folder">
+				</i>
+				Categorías
+			</a>
+		</li>
 	</ul>
 </div>
